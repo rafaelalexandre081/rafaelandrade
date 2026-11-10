@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Andrade | Copywriter e Gerente de Marketing</title>
+<meta name="description" content="Rafael Andrade, copywriter e gerente de marketing em Olinda, PE. Texto, estratégia e dados para campanhas, redes sociais e assessoria de imprensa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=League+Gothic&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000; --fg:#fff; --muted:#9a9a9a; --line:#2a2a2a; --card:#0d0d0d;
+    --display:"League Gothic","Arial Narrow",Impact,sans-serif;
+    --body:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --pad:clamp(16px,4vw,48px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+  h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(56px,9vw,110px);line-height:.9;letter-spacing:.5px;margin-bottom:40px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+  section{padding:110px 0;border-top:1px solid var(--line)}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+  nav.solid{background:rgba(0,0,0,.92);backdrop-filter:blur(8px);border-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:var(--display);font-size:28px;letter-spacing:1px;text-transform:uppercase}
+  .menu{display:flex;gap:26px;list-style:none}
+  .menu a{font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;transition:opacity .2s}
+  .menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+  .burger{display:none;background:none;border:0;color:var(--fg);font:600 12px var(--body);letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:10px 0}
+
+  /* BUTTONS */
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border:1px solid var(--fg);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:background .2s,color .2s}
+  .btn:hover{background:var(--fg);color:var(--bg)}
+  .btn.solid{background:var(--fg);color:var(--bg)}
+  .btn.solid:hover{background:transparent;color:var(--fg)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 56px;overflow:hidden;border:0}
+  .wall{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:6px;opacity:.13;pointer-events:none;transform:rotate(-4deg) scale(1.15)}
+  .row{display:flex;white-space:nowrap;font-family:var(--display);text-transform:uppercase;font-size:clamp(48px,8vw,96px);line-height:1;animation:slide 60s linear infinite}
+  .row:nth-child(even){animation-direction:reverse;-webkit-text-stroke:1px var(--fg);color:transparent}
+  .row span{padding-right:40px}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.55) 55%,#000 100%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(84px,17vw,240px);line-height:.82;letter-spacing:1px;margin-bottom:26px}
+  .hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px}
+  .role{font-size:14px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase}
+  .tag{font-size:17px;color:#d6d6d6;margin-top:6px}
+
+  /* APRESENTAÇÃO */
+  .about{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:start}
+  .quote{font-family:var(--display);text-transform:uppercase;font-size:clamp(44px,6vw,76px);line-height:.95}
+  .about p{color:#d0d0d0;margin-bottom:18px;font-size:17px}
+  .about p strong{color:var(--fg);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:72px}
+  .stat{padding:28px 24px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:var(--display);font-weight:400;font-size:64px;line-height:1}
+  .stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+
+  /* ASCENSÃO */
+  .climb{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+  .step{padding:36px 28px 40px;border-right:1px solid var(--line);position:relative}
+  .step:last-child{border-right:0;background:var(--fg);color:var(--bg)}
+  .step:last-child .eyebrow{color:#555}
+  .step h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,4.5vw,58px);line-height:1;margin:14px 0 10px}
+  .step p{font-size:15px;opacity:.8}
+  .climb-note{margin-top:20px;color:var(--muted);font-size:14px}
+
+  /* EXPERIÊNCIA */
+  .jobs{list-style:none}
+  .job{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:34px 0;border-top:1px solid var(--line)}
+  .job:last-child{border-bottom:1px solid var(--line)}
+  .when{font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--muted);padding-top:8px}
+  .job h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,4vw,46px);line-height:1}
+  .where{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin:6px 0 14px;color:#cfcfcf}
+  .job ul{list-style:none}
+  .job li{position:relative;padding-left:22px;color:#c8c8c8;margin-bottom:6px;font-size:15.5px}
+  .job li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--fg)}
+
+  /* NOMES */
+  .names{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .name{background:var(--bg);padding:34px 20px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;transition:background .25s,color .25s}
+  .name:hover{background:var(--fg);color:var(--bg)}
+  .name:hover .eyebrow{color:#555}
+  .name strong{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,3.6vw,48px);line-height:1}
+  /* card com vídeo */
+  .name.has-video{position:relative;overflow:hidden;border:0;font:inherit;color:var(--fg);text-align:left;cursor:pointer;min-height:300px;grid-row:span 1}
+  .name.has-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.55);transition:filter .3s,transform .6s}
+  .name.has-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 40%,rgba(0,0,0,.75))}
+  .name.has-video > span,.name.has-video > strong{position:relative;z-index:1}
+  .name.has-video .eyebrow{color:#ddd}
+  .name.has-video:hover{background:var(--bg);color:var(--fg)}
+  .name.has-video:hover .eyebrow{color:#ddd}
+  .name.has-video:hover video{filter:grayscale(0) brightness(.8);transform:scale(1.04)}
+  .play{position:absolute !important;right:16px;bottom:18px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--fg);padding:7px 12px}
+  .name.has-video:focus-visible{outline:2px solid var(--fg);outline-offset:-4px}
+
+  /* player em tela cheia */
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:56px 16px 24px}
+  .lightbox.open{display:flex}
+  .lightbox video{max-width:100%;max-height:100%;background:#000}
+  .lightbox .close{position:absolute;top:12px;right:16px;background:none;border:1px solid var(--fg);color:var(--fg);font:600 12px var(--body);letter-spacing:2px;text-transform:uppercase;padding:10px 16px;cursor:pointer}
+  .lightbox .close:hover{background:var(--fg);color:var(--bg)}
+
+  .sub-h{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:36px;margin:64px 0 20px}
+
+  /* SERVIÇOS / HABILIDADES */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .list{list-style:none;counter-reset:n}
+  .list li{counter-increment:n;display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .list li::before{content:counter(n,decimal-leading-zero);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:1px;min-width:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{border:1px solid var(--line);padding:10px 16px;font-size:13px;font-weight:500}
+  .edu{margin-top:44px}
+  .edu div{padding:18px 0;border-top:1px solid var(--line)}
+  .edu b{display:block;font-weight:600}
+  .edu span{color:var(--muted);font-size:14px}
+
+  /* CONTATO */
+  .contact h2{font-size:clamp(72px,14vw,190px);margin-bottom:24px}
+  .contact .lead{font-size:18px;color:#d0d0d0;max-width:560px;margin-bottom:36px}
+  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+  .ch{background:var(--bg);padding:26px 22px;display:block;transition:background .2s,color .2s}
+  a.ch:hover{background:var(--fg);color:var(--bg)}
+  .ch .eyebrow{display:block;margin-bottom:8px}
+  .ch strong{font-size:16px;font-weight:600;word-break:break-word}
+  footer{padding:36px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.row{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* RESPONSIVO */
+  @media (max-width:900px){
+    .menu{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#000;border-bottom:1px solid var(--line);padding:8px var(--pad) 18px}
+    .menu.open{display:flex}
+    .menu a{display:block;padding:12px 0}
+    .burger{display:block}
+    .about,.grid2{grid-template-columns:1fr;gap:40px}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .climb{grid-template-columns:1fr}
+    .step{border-right:0;border-bottom:1px solid var(--line)}
+    .names{grid-template-columns:1fr 1fr}
+    .job{grid-template-columns:1fr;gap:8px}
+    .when{padding-top:0}
+    .channels{grid-template-columns:1fr}
+    section{padding:80px 0}
+  }
+  @media (max-width:480px){
+    .names{grid-template-columns:1fr}
+    .name{min-height:120px}
+    .stat b{font-size:52px}
+    .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#topo" class="logo">R. Andrade</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#apresentacao">Apresentação</a></li>
+      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#campanhas">Campanhas</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wall" aria-hidden="true">
+    <div class="row"><span>Copywriting · Roteiros · Campanhas · Social Media · Releases ·</span><span>Copywriting · Roteiros · Campanhas · Social Media · Releases ·</span></div>
+    <div class="row"><span>Zico · Vampeta · Pablo · Tarcísio do Acordeon ·</span><span>Zico · Vampeta · Pablo · Tarcísio do Acordeon ·</span></div>
+    <div class="row"><span>Assessoria de imprensa · Pautas · Estratégia · Dados ·</span><span>Assessoria de imprensa · Pautas · Estratégia · Dados ·</span></div>
+    <div class="row"><span>Galo da Madrugada · Gol Linhas Aéreas · Teacher's · Pharmapele ·</span><span>Galo da Madrugada · Gol Linhas Aéreas · Teacher's · Pharmapele ·</span></div>
+    <div class="row"><span>Briefing → Roteiro → Campanha → Resultado ·</span><span>Briefing → Roteiro → Campanha → Resultado ·</span></div>
+  </div>
+  <div class="wrap">
+    <h1>Rafael<br>Andrade</h1>
+    <div class="hero-foot">
+      <div>
+        <div class="role">Copywriter | Gerente de Marketing | Assessor de Imprensa</div>
+        <div class="tag">Escrevo para convencer.</div>
+      </div>
+      <div class="btns">
+        <a class="btn solid" href="#experiencia">Conheça meu trabalho</a>
+        <a class="btn" href="#contato">Entre em contato</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="apresentacao">
+  <div class="wrap">
+    <div class="eyebrow rv">Apresentação</div>
+    <h2 class="rv">Texto, estratégia e dados</h2>
+    <div class="about">
+      <p class="quote rv">De copywriter a Gerente de Marketing, escrevendo para convencer.</p>
+      <div class="rv">
+        <p>Sou <strong>Rafael Alexandre Carneiro de Andrade</strong>, jornalista de Olinda, Pernambuco. Minha base é o jornalismo e a assessoria de imprensa, mas o que me diferencia é <strong>juntar texto, estratégia e dados</strong>.</p>
+        <p>Gerenciei redes sociais olhando métricas para decidir o que publicar e atuei como assessor de comunicação, negociando pautas e organizando a presença digital de um gabinete.</p>
+        <p>Transformo briefing em roteiro, campanha e resultado, rápido e sob pressão, com nomes como <strong>Zico, Vampeta, Pablo e Tarcísio do Acordeon</strong>.</p>
+        <div class="btns" style="margin-top:28px">
+          <a class="btn" href="#experiencia">Ver experiência</a>
+          <a class="btn" href="curriculo-rafael-andrade.pdf" download>Baixar currículo em PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>8+</b><span>anos em comunicação</span></div>
+      <div class="stat"><b>3</b><span>cargos na BETesporte</span></div>
+      <div class="stat"><b>4</b><span>nomes do esporte e da música</span></div>
+      <div class="stat"><b>7</b><span>empresas e instituições</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria">
+  <div class="wrap">
+    <div class="eyebrow rv">BETesporte · 10/2023 – 10/2026</div>
+    <h2 class="rv">Três degraus em uma casa</h2>
+    <div class="climb rv">
+      <div class="step">
+        <div class="eyebrow">01 · Contratado como</div>
+        <h3>Copywriter</h3>
+        <p>Matérias, textos e roteiros persuasivos para redes sociais e vídeo.</p>
+      </div>
+      <div class="step">
+        <div class="eyebrow">02 · Promovido a</div>
+        <h3>Social Media</h3>
+        <p>Conteúdo e redes sociais, com métricas guiando o que publicar.</p>
+      </div>
+      <div class="step">
+        <div class="eyebrow">03 · Promovido a</div>
+        <h3>Gerente de Marketing</h3>
+        <p>Campanhas de marketing com grandes nomes do esporte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="eyebrow rv">Experiência profissional</div>
+    <h2 class="rv">Experiência</h2>
+    <ul class="jobs">
+      <li class="job rv">
+        <div class="when">10/2023 – 10/2026</div>
+        <div>
+          <h3>Gerente de Marketing</h3>
+          <div class="where">BETesporte</div>
+          <ul>
+            <li>Elaboração de matérias, textos e campanhas de marketing</li>
+            <li>Campanhas com grandes nomes do esporte: Zico, Vampeta, Pablo e Tarcísio do Acordeon</li>
+            <li>Roteiros e conteúdos persuasivos para redes sociais e vídeo</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">07/2025 – 04/2026</div>
+        <div>
+          <h3>Assessor de Comunicação</h3>
+          <div class="where">Alepe · Gabinete do deputado Francismar Pontes, Recife</div>
+          <ul>
+            <li>Elaboração de releases, negociação de pautas com a imprensa e organização das redes sociais</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">03/2024 – 10/2024</div>
+        <div>
+          <h3>Gerente de Projetos</h3>
+          <div class="where">Editora Trato</div>
+          <ul>
+            <li>Gerenciamento da produção de livros culturais sobre a história de cidades</li>
+            <li>Coordenação de visitas técnicas e entrevistas</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">12/2021 – 03/2023</div>
+        <div>
+          <h3>Assessor de Imprensa</h3>
+          <div class="where">Alepe, Recife</div>
+          <ul>
+            <li>Matérias a partir das demandas dos clientes, com entrevistas a especialistas</li>
+            <li>Relacionamento com a mídia: sugestão de pautas, follow-up com jornalistas e busca de feedback</li>
+            <li>Matérias que destacaram a marca em veículos especializados</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">11/2020 – 12/2021</div>
+        <div>
+          <h3>Redator</h3>
+          <div class="where">Processtec, Olinda</div>
+          <ul>
+            <li>Gestão das estratégias de marketing digital dos clientes, de acordo com metas e objetivos</li>
+            <li>Relatórios de pesquisa para apoiar decisões da gerência, dos clientes e do marketing</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">07/2020 – 08/2026</div>
+        <div>
+          <h3>Social Media</h3>
+          <div class="where">Sorveteria Bacana, Olinda</div>
+          <ul>
+            <li>Comunicação presencial e online com clientes, divulgando serviços e apoiando o crescimento do negócio</li>
+            <li>Análise de informações para identificar problemas e propor soluções</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job rv">
+        <div class="when">01/2018 – 06/2020</div>
+        <div>
+          <h3>Assistente de Redação</h3>
+          <div class="where">AP Comunicação Estratégica, Olinda</div>
+          <ul>
+            <li>Textos, releases e notas, com follow-up com a imprensa</li>
+            <li>Atendimento a clientes como Galo da Madrugada, Teacher's, Pharmapele e Gol Linhas Aéreas</li>
+            <li>Planejamento e execução das atividades diárias dentro dos prazos da equipe</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="campanhas">
+  <div class="wrap">
+    <div class="eyebrow rv">Campanhas e clientes</div>
+    <h2 class="rv">Com quem já trabalhei</h2>
+    <div class="names rv">
+      <button class="name has-video" type="button" data-video="videos/zico.mp4" aria-label="Assistir ao vídeo da campanha com Zico">
+        <video src="videos/zico.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+        <span class="eyebrow">Campanha · BETesporte</span>
+        <strong>Zico</strong>
+        <span class="play">▶ Assistir</span>
+      </button>
+      <button class="name has-video" type="button" data-video="videos/vampeta.mp4" aria-label="Assistir ao vídeo da campanha com Vampeta">
+        <video src="videos/vampeta.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+        <span class="eyebrow">Campanha · BETesporte</span>
+        <strong>Vampeta</strong>
+        <span class="play">▶ Assistir</span>
+      </button>
+      <div class="name"><span class="eyebrow">Campanha · BETesporte</span><strong>Iguinho e Lulinha</strong></div>
+      <div class="name"><span class="eyebrow">Campanha · BETesporte</span><strong>Tarcísio do Acordeon</strong></div>
+    </div>
+    <h3 class="sub-h rv">Clientes atendidos na assessoria</h3>
+    <div class="names rv">
+      <div class="name"><span class="eyebrow">AP Comunicação</span><strong>Galo da Madrugada</strong></div>
+      <div class="name"><span class="eyebrow">AP Comunicação</span><strong>Gol Linhas Aéreas</strong></div>
+      <div class="name"><span class="eyebrow">AP Comunicação</span><strong>Teacher's</strong></div>
+      <div class="name"><span class="eyebrow">AP Comunicação</span><strong>Pharmapele</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="eyebrow rv">Serviços e competências</div>
+    <h2 class="rv">O que eu faço</h2>
+    <div class="grid2">
+      <div class="rv">
+        <ol class="list">
+          <li>Copywriting e roteiros persuasivos</li>
+          <li>Campanhas de marketing com influenciadores e celebridades</li>
+          <li>Gestão de marketing e de projetos</li>
+          <li>Social media e produção de conteúdo</li>
+          <li>Assessoria de imprensa e relacionamento com a mídia</li>
+          <li>Releases, matérias e negociação de pautas</li>
+          <li>Estratégia de marketing digital orientada por métricas</li>
+        </ol>
+      </div>
+      <div class="rv">
+        <div class="eyebrow" style="margin-bottom:18px">Habilidades</div>
+        <div class="chips">
+          <span class="chip">Comunicação eficaz</span>
+          <span class="chip">Mediação de conflitos</span>
+          <span class="chip">Resposta rápida a demandas imediatas</span>
+          <span class="chip">Iniciativa e proatividade</span>
+          <span class="chip">Clientes exigentes</span>
+          <span class="chip">Sensibilidade social, cultural, política e econômica</span>
+        </div>
+        <div class="edu">
+          <div class="eyebrow" style="margin-bottom:12px">Formação</div>
+          <div><b>Jornalismo, ênfase em Assessoria de Comunicação</b><span>Uninassau, Recife · concluído em 12/2020</span></div>
+          <div><b>Ciências Sociais</b><span>UFPE, Recife · ingresso em 08/2014, curso trancado</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <div class="eyebrow rv">Contato</div>
+    <h2 class="rv">Vamos conversar</h2>
+    <p class="lead rv">Tem um briefing, uma campanha ou uma marca que precisa ser ouvida? Me conte o desafio.</p>
+    <div class="btns rv">
+      <a class="btn solid" href="https://wa.me/5581989947827?text=Ol%C3%A1%2C%20Rafael!%20Vi%20seu%20site%20e%20quero%20conversar." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn" href="mailto:rafael.alexandre081@gmail.com">Enviar e-mail</a>
+    </div>
+    <div class="channels rv">
+      <a class="ch" href="https://wa.me/5581989947827" target="_blank" rel="noopener"><span class="eyebrow">WhatsApp</span><strong>(81) 98994-7827</strong></a>
+      <a class="ch" href="mailto:rafael.alexandre081@gmail.com"><span class="eyebrow">E-mail</span><strong>rafael.alexandre081@gmail.com</strong></a>
+      <div class="ch"><span class="eyebrow">Localização</span><strong>Olinda, Pernambuco, Brasil</strong></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Rafael Andrade</span>
+    <span>Copywriter · Gerente de Marketing</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vídeo da campanha">
+  <button class="close" id="lbClose" type="button">Fechar ✕</button>
+  <video id="lbVideo" controls playsinline></video>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox'), lbVideo = document.getElementById('lbVideo');
+  let lbOrigem = null;
+  document.querySelectorAll('[data-video]').forEach(card => card.addEventListener('click', () => {
+    lbOrigem = card; lbVideo.src = card.dataset.video; lb.classList.add('open');
+    document.body.style.overflow = 'hidden'; lbVideo.play().catch(() => {}); document.getElementById('lbClose').focus();
+  }));
+  const fecharLb = () => { lbVideo.pause(); lbVideo.removeAttribute('src'); lbVideo.load(); lb.classList.remove('open'); document.body.style.overflow = ''; if (lbOrigem) lbOrigem.focus(); };
+  document.getElementById('lbClose').addEventListener('click', fecharLb);
+  lb.addEventListener('click', e => { if (e.target === lb) fecharLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) fecharLb(); });
+
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); burger.textContent = o ? 'Fechar' : 'Menu'; });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); burger.textContent = 'Menu'; }));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  } else document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
